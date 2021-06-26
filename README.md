@@ -15,10 +15,10 @@ This was a really fun project to work through, I come from a background of using
 
 ## Technologies/Packages Used
 
-- json-server  <sup>^0.16.3</sup>
-- react <sup>^17.0.2</sup>
-- react-icons <sup>^4.2.0</sup>
-- react-router-dom <sup>^5.2.0</sup>
+- json-server  <sup>[^0.16.3](https://www.npmjs.com/package/json-server)</sup>
+- react <sup>[^17.0.2](https://www.npmjs.com/package/react)</sup>
+- react-icons <sup>[^4.2.0](https://www.npmjs.com/package/react-icons)</sup>
+- react-router-dom <sup>[^5.2.0](https://www.npmjs.com/package/react-router-dom)</sup>
 
 ## Images
 
