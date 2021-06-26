@@ -13,8 +13,11 @@
     "react",
     "json server"
   ],
-  "repository": {},
-  "bugs": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdkincaid/TaskTracker.git"
+  },
+  "bugs": "https://github.com/mdkincaid/TaskTracker/issues",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
