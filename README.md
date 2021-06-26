@@ -11,6 +11,7 @@ This was a really fun project to work through, I come from a background of using
 **[Technologies/Packages Used](#technologiespackages-used)**<br>
 **[Images](#images)**<br>
 **[Available Scripts](#available-scripts)**<br>
+**[Future Plans](#future-plans)**<br>
 **[Credits](#credits)**<br>
 
 ## Technologies/Packages Used
@@ -46,6 +47,10 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+## Future Plans
+- Unit Tests
+- Improved Date & Time input
 
 ## Credits
 
