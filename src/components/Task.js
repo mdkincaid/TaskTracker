@@ -14,7 +14,7 @@ const Task = ({ task, onDelete, onToggle }) => {
 					onClick={() => onDelete(task.id)}
 				/>
 			</h3>
-			<p>{task.day}</p>
+			<p>{task.date}</p>
 		</div>
 	);
 };

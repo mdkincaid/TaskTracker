@@ -1,10 +1,15 @@
 // react
 import { useState } from 'react';
+import Datepicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
+// third-party
+import moment from 'moment';
 
 const AddTask = ({ onAdd }) => {
 	const [text, setText] = useState('');
-	const [day, setDay] = useState('');
 	const [reminder, setReminder] = useState(false);
+	const [startDate, setStartDate] = useState(null);
 
 	const onSubmit = (e) => {
 		e.preventDefault();
@@ -14,10 +19,12 @@ const AddTask = ({ onAdd }) => {
 			return;
 		}
 
-		onAdd({ text, day, reminder });
+		const date = moment(startDate).format('dddd MMM Do [at] h:mma');
+
+		onAdd({ text, date, reminder });
 
 		setText('');
-		setDay('');
+		setStartDate(null);
 		setReminder(false);
 	};
 
@@ -27,18 +34,22 @@ const AddTask = ({ onAdd }) => {
 				<label>Task</label>
 				<input
 					type='text'
-					placeholder='Add Task'
+					placeholder='Enter Task'
 					value={text}
 					onChange={(e) => setText(e.target.value)}
 				/>
 			</div>
 			<div className='form-control'>
 				<label>Day & Time</label>
-				<input
-					type='text'
-					placeholder='Add Day & Time'
-					value={day}
-					onChange={(e) => setDay(e.target.value)}
+				<Datepicker
+					wrapperClassName='datePicker'
+					placeholderText='Enter Date & Time'
+					selected={startDate}
+					onChange={(date) => setStartDate(date)}
+					dateFormat='MM/dd/yyyy h:mm aa'
+					showTimeInput
+					timeInputLabel='Time:'
+					isClearable
 				/>
 			</div>
 			<div className='form-control form-control-check'>
