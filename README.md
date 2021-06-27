@@ -25,10 +25,10 @@ This was a really fun project to work through, I come from a background of using
 
 ## Images
 
-<img src="public\Main.png" alt="Image of Task Tracker Main View" width="512">
-<img src="public\AddTask.png" alt="Image of Task Tracker Add Task View" width="512">
-<img src="public\DatePicker.png" alt="Image of Task Tracker Date Picker View" width="512">
-<img src="public\About.png" alt="Image of Task Tracker About View" width="512">
+<img src="img\Main.png" alt="Image of Task Tracker Main View" width="512">
+<img src="img\AddTask.png" alt="Image of Task Tracker Add Task View" width="512">
+<img src="img\DatePicker.png" alt="Image of Task Tracker Date Picker View" width="512">
+<img src="img\About.png" alt="Image of Task Tracker About View" width="512">
 
 ## Available Scripts
 
