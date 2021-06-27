@@ -20,6 +20,7 @@ This was a really fun project to work through, I come from a background of using
 - react <sup>[^17.0.2](https://www.npmjs.com/package/react)</sup>
 - react-icons <sup>[^4.2.0](https://www.npmjs.com/package/react-icons)</sup>
 - react-router-dom <sup>[^5.2.0](https://www.npmjs.com/package/react-router-dom)</sup>
+- react-datepicker <sup>[^4.1.1](https://www.npmjs.com/package/react-datepicker)</sup>
 
 ## Images
 
