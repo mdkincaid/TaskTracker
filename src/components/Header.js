@@ -1,6 +1,8 @@
 // react
-import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
+
+// third-party
+import PropTypes from 'prop-types';
 
 // project
 import Button from './Button';
