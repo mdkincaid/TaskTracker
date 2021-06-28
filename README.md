@@ -53,10 +53,11 @@ Your app is ready to be deployed!
 
 ## Future Plans
 - Unit tests
-- Edit tasks
+- Refactor Add and Edit tasks
 - Update styling
 - Dark mode/light mode?
 - Rearrange task ordering?
+- ~~Edit tasks~~
 - ~~Improved Date & Time input~~
 
 ## Credits
