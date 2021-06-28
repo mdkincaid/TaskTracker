@@ -3,9 +3,6 @@ import { useState } from 'react';
 import Datepicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-// third-party
-import moment from 'moment';
-
 const AddTask = ({ onAdd }) => {
 	const [text, setText] = useState('');
 	const [reminder, setReminder] = useState(false);
@@ -19,7 +16,7 @@ const AddTask = ({ onAdd }) => {
 			return;
 		}
 
-		const date = moment(startDate).format('dddd MMM Do [at] h:mma');
+		const date = startDate;
 
 		onAdd({ text, date, reminder });
 
