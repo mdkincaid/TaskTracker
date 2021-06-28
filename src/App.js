@@ -46,6 +46,31 @@ function App() {
 		setTasks([...tasks, data]);
 	};
 
+	const editTask = async (taskEdit) => {
+		const res = await fetch(`http://localhost:5000/tasks/${taskEdit.id}`, {
+			method: 'PUT',
+			headers: {
+				'Content-type': 'application/json',
+			},
+			body: JSON.stringify(taskEdit),
+		});
+
+		const data = await res.json();
+
+		setTasks(
+			tasks.map((task) =>
+				task.id === taskEdit.id
+					? {
+							...task,
+							text: data.text,
+							date: data.date,
+							reminder: data.reminder,
+					  }
+					: task
+			)
+		);
+	};
+
 	const deleteTask = async (id) => {
 		await fetch(`http://localhost:5000/tasks/${id}`, {
 			method: 'DELETE',
@@ -93,6 +118,7 @@ function App() {
 									tasks={tasks}
 									onDelete={deleteTask}
 									onToggle={toggleReminder}
+									onEdit={editTask}
 								/>
 							) : (
 								'No Tasks To Show'
