@@ -13,26 +13,29 @@ const Task = ({ task, onDelete, onToggle, onEdit, editing, setEditing }) => {
 			className={`task ${task.reminder ? 'reminder' : ''}`}
 			onDoubleClick={() => onToggle(task.id)}
 		>
-			<h3>
-				{task.text}
-				<FaEdit
-					style={{ marginLeft: 'auto' }}
-					onClick={() => setEditing(task.id)}
-				/>
-				<FaTimes
-					style={{ color: 'red', cursor: 'pointer' }}
-					onClick={() => onDelete(task.id)}
-				/>
-			</h3>
-			<p>{moment(task.date).format('dddd MMM Do [at] h:mma')}</p>
-			{editing === task.id && (
+			{editing === task.id ? (
 				<div>
-					<hr style={{ marginTop: '10px' }} />
 					<EditTask
 						onEdit={onEdit}
 						task={task}
 						setEditing={setEditing}
 					/>
+				</div>
+			) : (
+				<div>
+					{' '}
+					<h3>
+						{task.text}
+						<FaEdit
+							style={{ marginLeft: 'auto' }}
+							onClick={() => setEditing(task.id)}
+						/>
+						<FaTimes
+							style={{ color: 'red', cursor: 'pointer' }}
+							onClick={() => onDelete(task.id)}
+						/>
+					</h3>
+					<p>{moment(task.date).format('dddd MMM Do [at] h:mma')}</p>
 				</div>
 			)}
 		</div>
