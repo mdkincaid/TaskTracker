@@ -1,16 +1,16 @@
 {
   "tasks": [
     {
-      "text": "Meeting at School",
-      "date": "Wednesday Jun 16th at 1:30pm",
-      "reminder": true,
-      "id": 7
+      "text": "Test",
+      "date": "2021-06-01T16:30:00.000Z",
+      "reminder": false,
+      "id": 14
     },
     {
       "text": "Food Shopping",
-      "date": "Friday Jun 18th at 2:30pm",
-      "reminder": true,
-      "id": 8
+      "date": "2021-06-17T01:30:00.000Z",
+      "reminder": false,
+      "id": 15
     }
   ]
 }
