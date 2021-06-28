@@ -1,10 +1,11 @@
 // react
 import { useState } from 'react';
-import Datepicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 
 // third-party
 import moment from 'moment';
+
+// project
+import TaskInfoForm from './TaskInfoForm';
 
 const EditTask = ({ onEdit, task, setEditing }) => {
 	var dateString = moment(task.date).format('YYYY-MM-DD h:mm a');
@@ -31,49 +32,23 @@ const EditTask = ({ onEdit, task, setEditing }) => {
 		setEditing('');
 	};
 
-	return (
-		<div>
-			<h3>Edit Task</h3>
-			<form className='add-form' onSubmit={onSubmit}>
-				<div className='form-control'>
-					<label>Task</label>
-					<input
-						type='text'
-						placeholder='Enter Task'
-						value={text}
-						onChange={(e) => setText(e.target.value)}
-					/>
-				</div>
-				<div className='form-control'>
-					<label>Day & Time</label>
-					<Datepicker
-						wrapperClassName='datePicker'
-						placeholderText='Enter Date & Time'
-						selected={startDate}
-						onChange={(date) => setStartDate(date)}
-						dateFormat='MM/dd/yyyy h:mm aa'
-						showTimeInput
-						timeInputLabel='Time:'
-						isClearable
-					/>
-				</div>
-				<div className='form-control form-control-check'>
-					<label>Set Reminder</label>
-					<input
-						type='checkbox'
-						checked={reminder}
-						value={reminder}
-						onChange={(e) => setReminder(e.currentTarget.checked)}
-					/>
-				</div>
+	const onCancel = (e) => {
+		e.preventDefault();
+		setEditing('');
+	};
 
-				<input
-					type='submit'
-					value='Save Task'
-					className='btn btn-block'
-				/>
-			</form>
-		</div>
+	return (
+		<TaskInfoForm
+			onSubmit={onSubmit}
+			onCancel={onCancel}
+			text={text}
+			setText={setText}
+			reminder={reminder}
+			setReminder={setReminder}
+			startDate={startDate}
+			setStartDate={setStartDate}
+			formType={'Edit'}
+		/>
 	);
 };
 
