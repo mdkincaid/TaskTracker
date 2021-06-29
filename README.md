@@ -53,10 +53,12 @@ Your app is ready to be deployed!
 
 ## Future Plans
 - Unit tests
-- Refactor Add and Edit tasks
 - Update styling
 - Dark mode/light mode?
 - Rearrange task ordering?
+- Working reminders??????
+- Update to use MERN stack
+- ~~Refactor Add and Edit tasks~~
 - ~~Edit tasks~~
 - ~~Improved Date & Time input~~
 
