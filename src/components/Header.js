@@ -10,9 +10,9 @@ const Header = ({ title, onAdd, showAdd }) => {
 	let addButton;
 
 	if (location.pathname === '/' && !showAdd) {
-		addButton = <FaPlus size={28} onClick={onAdd} />;
+		addButton = <FaPlus size={28} onClick={onAdd} cursor='pointer' />;
 	} else if (location.pathname === '/' && showAdd) {
-		addButton = <FaMinus size={28} onClick={onAdd} />;
+		addButton = <FaMinus size={28} onClick={onAdd} cursor='pointer' />;
 	}
 
 	return (
