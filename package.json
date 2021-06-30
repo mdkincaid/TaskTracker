@@ -62,5 +62,10 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "collectCoverageFrom": ["src/**/*.js", "!src/index.js"],
+    "coverageReporters": ["text"]
   }
 }
