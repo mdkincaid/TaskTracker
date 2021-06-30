@@ -1,3 +1,7 @@
+![NPMVersion](https://img.shields.io/npm/v/react?label=react)
+![UnitTests](https://img.shields.io/github/workflow/status/mdkincaid/TaskTracker/Node%20CI-Test?label=tests)
+![LastCommit](https://img.shields.io/github/last-commit/mdkincaid/TaskTracker)
+
 # Task Tracker (mini project)
 
 
