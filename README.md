@@ -1,3 +1,7 @@
+![NPMVersion](https://img.shields.io/npm/v/react?label=react)
+![UnitTests](https://img.shields.io/github/workflow/status/mdkincaid/TaskTracker/Node%20CI-Test?label=tests)
+![LastCommit](https://img.shields.io/github/last-commit/mdkincaid/TaskTracker)
+
 # Task Tracker (mini project)
 
 
@@ -25,9 +29,10 @@ This was a really fun project to work through, I come from a background of using
 
 ## Images
 
-<img src="public\TaskTrackerMain.png" alt="Image of Task Tracker Main Screen" width="512">
-<img src="public\TaskTrackerAddTask.png" alt="Image of Task Tracker Add Task Screen" width="512">
-<img src="public\TaskTrackerAbout.png" alt="Image of Task Tracker About Screen" width="512">
+<img src="img\Main.png" alt="Image of Task Tracker Main View" width="512">
+<img src="img\AddTask.png" alt="Image of Task Tracker Add Task View" width="512">
+<img src="img\DatePicker.png" alt="Image of Task Tracker Date Picker View" width="512">
+<img src="img\About.png" alt="Image of Task Tracker About View" width="512">
 
 ## Available Scripts
 
@@ -52,10 +57,13 @@ Your app is ready to be deployed!
 
 ## Future Plans
 - Unit tests
-- Edit tasks
 - Update styling
 - Dark mode/light mode?
 - Rearrange task ordering?
+- Working reminders??????
+- Update to use MERN stack
+- ~~Refactor Add and Edit tasks~~
+- ~~Edit tasks~~
 - ~~Improved Date & Time input~~
 
 ## Credits

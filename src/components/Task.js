@@ -1,20 +1,43 @@
 // react
-import { FaTimes } from 'react-icons/fa';
+import { FaEdit, FaTimes } from 'react-icons/fa';
 
-const Task = ({ task, onDelete, onToggle }) => {
+// third-party
+import moment from 'moment';
+
+// project
+import EditTask from './EditTask';
+
+const Task = ({ task, onDelete, onToggle, onEdit, editing, setEditing }) => {
 	return (
 		<div
 			className={`task ${task.reminder ? 'reminder' : ''}`}
 			onDoubleClick={() => onToggle(task.id)}
 		>
-			<h3>
-				{task.text}
-				<FaTimes
-					style={{ color: 'red', cursor: 'pointer' }}
-					onClick={() => onDelete(task.id)}
-				/>
-			</h3>
-			<p>{task.date}</p>
+			{editing === task.id ? (
+				<div>
+					<EditTask
+						onEdit={onEdit}
+						task={task}
+						setEditing={setEditing}
+					/>
+				</div>
+			) : (
+				<div>
+					{' '}
+					<h3>
+						{task.text}
+						<FaEdit
+							style={{ marginLeft: 'auto' }}
+							onClick={() => setEditing(task.id)}
+						/>
+						<FaTimes
+							style={{ color: 'red', cursor: 'pointer' }}
+							onClick={() => onDelete(task.id)}
+						/>
+					</h3>
+					<p>{moment(task.date).format('dddd MMM Do [at] h:mma')}</p>
+				</div>
+			)}
 		</div>
 	);
 };
