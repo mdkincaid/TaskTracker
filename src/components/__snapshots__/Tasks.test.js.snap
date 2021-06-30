@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tasks should render the Tasks Component correctly 1`] = `
+<Fragment>
+  <Task
+    editing=""
+    key="14"
+    setEditing={[Function]}
+    task={
+      Object {
+        "date": "2021-06-01T20:30:00.000Z",
+        "id": 14,
+        "reminder": false,
+        "text": "Test Task",
+      }
+    }
+  />
+  <Task
+    editing=""
+    key="15"
+    setEditing={[Function]}
+    task={
+      Object {
+        "date": "2021-06-17T01:30:00.000Z",
+        "id": 15,
+        "reminder": false,
+        "text": "Food Shopping",
+      }
+    }
+  />
+  <Task
+    editing=""
+    key="16"
+    setEditing={[Function]}
+    task={
+      Object {
+        "date": "2021-06-10T04:00:00.000Z",
+        "id": 16,
+        "reminder": false,
+        "text": "Test",
+      }
+    }
+  />
+</Fragment>
+`;
