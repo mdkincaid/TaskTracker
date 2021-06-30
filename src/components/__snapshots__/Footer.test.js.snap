@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render the Footer Component correctly 1`] = `
+<footer>
+  <p>
+    Copyright © 2021
+  </p>
+  <Link
+    to="/about"
+  >
+    About
+  </Link>
+</footer>
+`;
