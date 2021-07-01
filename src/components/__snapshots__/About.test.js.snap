@@ -3,7 +3,7 @@
 exports[`About should render the About Component correctly 1`] = `
 <div>
   <h4>
-    Version 1.0.0
+    Version 1.2.0
   </h4>
   <Link
     to="/"
