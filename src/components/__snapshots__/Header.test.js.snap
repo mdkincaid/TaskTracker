@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header should render the Header Component correctly 1`] = `
-<header
-  className="header"
->
-  <h1>
-    Task Tracker
-  </h1>
-</header>
+exports[`Header should render 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    <h1>
+      Task Tracker
+    </h1>
+  </header>
+</div>
 `;
