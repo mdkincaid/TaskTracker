@@ -1,18 +1,33 @@
 // react
 import React from 'react';
-
-// third-party
-import { shallow } from 'enzyme';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 // project
 import About from './About';
 
 describe('About', () => {
-	it('should render the About Component correctly', () => {
-		// arrange / act
-		let wrapped = shallow(<About></About>);
-		
+	it('should render', () => {
+		const result = render(
+			<Router>
+				<About />
+			</Router>
+		);
+
 		// assert
-		expect(wrapped).toMatchSnapshot();
+		expect(result.container).toMatchSnapshot();
+	});
+
+	it('should have display a version of 1.2.0', () => {
+		// arrange / act
+		render(
+			<Router>
+				<About />
+			</Router>
+		);
+
+		// assert
+		expect(screen.getByText('Version 1.2.0')).toBeInTheDocument();
 	});
 });

@@ -1,8 +1,7 @@
 // react
 import React from 'react';
-
-// third-party
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 // project
 import Tasks from './Tasks';
@@ -29,24 +28,17 @@ const tasks = [
 ];
 
 describe('Tasks', () => {
-	it('should render the Tasks Component correctly', () => {
-		// arrange / act
-		let wrapped = shallow(<Tasks tasks={tasks}></Tasks>);
+	it('should render', () => {
+		const result = render(<Tasks tasks={tasks} />);
 
 		// assert
-		expect(wrapped).toMatchSnapshot();
+		expect(result.container).toMatchSnapshot();
 	});
 
 	it('should render 3 tasks when 3 tasks are supplied', () => {
-		// arrange / act
-		let wrapped = shallow(<Tasks tasks={tasks}></Tasks>);
-		const expectedCount = tasks.length;
+		const result = render(<Tasks tasks={tasks} />);
 
 		// assert
-		expect(wrapped.find('Task').length).toEqual(expectedCount);
-	});
-
-	it('should clear the value of editing when the task id matches editing', () => {
-		// TODO(): figure out how to test setEditStatus
+		expect(result.container.getElementsByClassName('task').length).toBe(3);
 	});
 });
