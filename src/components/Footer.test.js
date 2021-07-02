@@ -1,18 +1,21 @@
 // react
 import React from 'react';
-
-// third-party
-import { shallow } from 'enzyme';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 // project
 import Footer from './Footer';
 
 describe('Footer', () => {
-	it('should render the Footer Component correctly', () => {
-		// arrange / act
-		let wrapped = shallow(<Footer></Footer>);
+	it('should render', () => {
+		const result = render(
+			<Router>
+				<Footer />
+			</Router>
+		);
 
 		// assert
-		expect(wrapped).toMatchSnapshot();
+		expect(result.container).toMatchSnapshot();
 	});
 });
