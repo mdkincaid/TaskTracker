@@ -7,7 +7,7 @@ import moment from 'moment';
 // project
 import TaskInfoForm from './TaskInfoForm';
 
-const EditTask = ({ onEdit, task, setEditing }) => {
+const EditTask = ({ onEdit, task, onEditSelect }) => {
 	var dateString = moment(task.date).format('YYYY-MM-DD h:mm a');
 
 	const [text, setText] = useState(task.text);
@@ -29,12 +29,12 @@ const EditTask = ({ onEdit, task, setEditing }) => {
 		const id = task.id;
 
 		onEdit({ text, date, reminder, id });
-		setEditing('');
+		onEditSelect('');
 	};
 
 	const onCancel = (e) => {
 		e.preventDefault();
-		setEditing('');
+		onEditSelect('');
 	};
 
 	return (

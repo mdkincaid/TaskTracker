@@ -7,7 +7,7 @@ import moment from 'moment';
 // project
 import EditTask from './EditTask';
 
-const Task = ({ task, onDelete, onToggle, onEdit, editing, setEditing }) => {
+const Task = ({ task, onDelete, onToggle, onEdit, editing, onEditSelect }) => {
 	return (
 		<div
 			className={`task ${task.reminder ? 'reminder' : ''}`}
@@ -15,26 +15,26 @@ const Task = ({ task, onDelete, onToggle, onEdit, editing, setEditing }) => {
 		>
 			{editing === task.id ? (
 				<div>
-					<EditTask
-						onEdit={onEdit}
-						task={task}
-						setEditing={setEditing}
-					/>
+					<EditTask onEdit={onEdit} task={task} onEditSelect={onEditSelect} />
 				</div>
 			) : (
 				<div>
 					{' '}
-					<h3>
-						{task.text}
-						<FaEdit
-							style={{ marginLeft: 'auto' }}
-							onClick={() => setEditing(task.id)}
-						/>
-						<FaTimes
-							style={{ color: 'red', cursor: 'pointer' }}
-							onClick={() => onDelete(task.id)}
-						/>
-					</h3>
+					<h3>{task.text}</h3>
+					<button
+						aria-label={`edit task ${task.id}`}
+						style={{ marginLeft: 'auto' }}
+						onClick={() => onEditSelect(task.id)}
+					>
+						<FaEdit />
+					</button>
+					<button
+						aria-label={`delete task ${task.id}`}
+						style={{ color: 'red', cursor: 'pointer' }}
+						onClick={() => onDelete(task.id)}
+					>
+						<FaTimes />
+					</button>
 					<p>{moment(task.date).format('dddd MMM Do [at] h:mma')}</p>
 				</div>
 			)}
