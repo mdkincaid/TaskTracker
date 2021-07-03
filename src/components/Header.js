@@ -10,9 +10,17 @@ const Header = ({ title, onAdd, showAdd }) => {
 	let addButton;
 
 	if (location.pathname === '/' && !showAdd) {
-		addButton = <FaPlus size={28} onClick={onAdd} cursor='pointer' />;
+		addButton = (
+			<button aria-label='show add task'>
+				<FaPlus size={28} onClick={onAdd} cursor='pointer' />
+			</button>
+		);
 	} else if (location.pathname === '/' && showAdd) {
-		addButton = <FaMinus size={28} onClick={onAdd} cursor='pointer' />;
+		addButton = (
+			<button aria-label='hide add task'>
+				<FaMinus size={28} onClick={onAdd} cursor='pointer' />
+			</button>
+		);
 	}
 
 	return (
