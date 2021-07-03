@@ -1,44 +1,41 @@
 // react
 import React from 'react';
-
-// third-party
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 // project
 import Task from './Task';
 
-const task = {
-	text: 'Test Task',
-	date: '2021-06-01T20:30:00.000Z',
-	reminder: false,
-	id: 14,
-};
-
 describe('Task', () => {
-	it('should render the Task Component correctly', () => {
-		// arrange / act
-		let wrapped = shallow(<Task task={task}></Task>);
-
-		// assert
-		expect(wrapped).toMatchSnapshot();
-	});
-
-	it('should render the Edit Task child component when the task.id matches editing', () => {
+	it('should render correctly', () => {
 		// arrange
-		const editing = 14;
+		const task = {
+			text: 'Test Task',
+			date: '2021-06-01T20:30:00.000Z',
+			reminder: false,
+			id: 1,
+		};
 
 		// act
-		let wrapped = shallow(<Task task={task} editing={editing}></Task>)
+		const { container } = render(<Task task={task} />);
 
 		// assert
-		expect(wrapped.find('EditTask')).toBeDefined();
+		expect(container).toMatchSnapshot();
 	});
 
 	it('should render the task text', () => {
-		// arrange / act
-		let wrapped = shallow(<Task task={task}></Task>);
+		// arrange
+		const task = {
+			text: 'Test Task',
+			date: '2021-06-01T20:30:00.000Z',
+			reminder: false,
+			id: 1,
+		};
+
+		// act
+		render(<Task task={task} />);
 
 		// assert
-		expect(wrapped.find('h3').text()).toContain(task.text);
+		expect(screen.getByRole('heading', {level: 3}).textContent).toBe(task.text);
 	});
 });
