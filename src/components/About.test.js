@@ -1,29 +1,47 @@
 // react
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { render, screen } from '@testing-library/react';
+import { Router, Route } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
+
+// third-party
+import { createMemoryHistory } from 'history';
 
 // project
 import About from './About';
 
 describe('About', () => {
 	it('should render', () => {
-		const result = render(
-			<Router>
-				<About />
+		// arrange
+		const history = createMemoryHistory();
+		const route = '/';
+
+		// act
+		history.push(route);
+		const { container } = render(
+			<Router history={history}>
+				<Route path='/about'>
+					<About />
+				</Route>
 			</Router>
 		);
 
 		// assert
-		expect(result.container).toMatchSnapshot();
+		expect(container).toMatchSnapshot();
 	});
 
-	it('should have display a version of 1.2.0', () => {
-		// arrange / act
+	it('should dispaly proper version of 1.2.0', () => {
+		// arrange
+		const history = createMemoryHistory();
+		const route = '/';
+
+		// act
+		history.push(route);
 		render(
-			<Router>
-				<About />
+			<Router history={history}>
+				<Route>
+					<About />
+				</Route>
 			</Router>
 		);
 
