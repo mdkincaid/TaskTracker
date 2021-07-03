@@ -16,7 +16,7 @@ const TaskInfoForm = ({
 	return (
 		<div>
 			<h3>{formType} Task</h3>
-			<form className='add-form' onSubmit={onSubmit}>
+			<form aria-label={`${formType} task form`} className='add-form' onSubmit={onSubmit}>
 				<div className='form-control'>
 					<label>Task</label>
 					<input
