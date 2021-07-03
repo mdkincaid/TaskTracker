@@ -86,8 +86,8 @@ describe('Header', () => {
 		);
 
 		// assert
-		expect(screen.getByRole('button', { name: 'show-add-task' })).toBeInTheDocument();
-		expect(screen.queryByRole('button', { name: 'hide-add-task' })).not.toBeInTheDocument();
+		expect(screen.getByRole('button', { name: 'show add task' })).toBeInTheDocument();
+		expect(screen.queryByRole('button', { name: 'hide add task' })).not.toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 	});
 
@@ -108,8 +108,8 @@ describe('Header', () => {
 		);
 
 		// assert
-		expect(screen.getByRole('button', { name: 'hide-add-task' })).toBeInTheDocument();
-		expect(screen.queryByRole('button', { name: 'show-add-task' })).not.toBeInTheDocument();
+		expect(screen.getByRole('button', { name: 'hide add task' })).toBeInTheDocument();
+		expect(screen.queryByRole('button', { name: 'show add task' })).not.toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 	});
 });
