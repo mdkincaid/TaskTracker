@@ -1,52 +1,115 @@
 // react
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { Router, Route } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
+
+// third-party
+import { createMemoryHistory } from 'history';
 
 // project
 import Header from './Header';
 
-jest.mock('react-router-dom', () => ({
-	...jest.requireActual('react-router-dom'),
-	useLocation: () => ({
-		pathname: 'localhost:3000/example/path',
-	}),
-}));
-
 describe('Header', () => {
 	it('should render', () => {
-		const result = render(<Header />);
+		// arrange
+		const history = createMemoryHistory();
+		const route = '/';
+
+		// act
+		history.push(route);
+		const { container } = render(
+			<Router history={history}>
+				<Route>
+					<Header />
+				</Route>
+			</Router>
+		);
 
 		// assert
-		expect(result.container).toMatchSnapshot();
+		expect(container).toMatchSnapshot();
 	});
 
-	describe('props', () => {
-		it('should render a title of Task Tracker', () => {
-			// arrange / act
-			const title = 'Task Tracker';
-			const result = render(<Header>{title}</Header>);
+	it('should render the default title of Task Tracker if no title is supplied', () => {
+		// arrange
+		const history = createMemoryHistory();
+		const route = '/';
 
-			// assert
-			expect(result.getByText(title)).toBeTruthy()
-		});
+		// act
+		history.push(route);
+		render(
+			<Router history={history}>
+				<Route>
+					<Header></Header>
+				</Route>
+			</Router>
+		);
 
-		// it('should render the FaPlus icon if showAdd is false', () => {
-		// 	// arrange / act
-		// 	const showAdd = false;
-		// 	let wrapped = shallow(<Header showAdd={showAdd}></Header>);
+		// assert
+		expect(screen.getByRole('heading', 1).textContent).toBe('Task Tracker');
+	});
 
-		// 	// assert
-		// 	expect(wrapped.find('FaPlus')).toBeDefined();
-		// });
+	it('should render the title of Test when title is supplied', () => {
+		// arrange
+		const history = createMemoryHistory();
+		const title = 'Test';
+		const route = '/';
 
-		// it('should render the FaMinus icon if showAdd is true', () => {
-		// 	// arrange / act
-		// 	const showAdd = true;
-		// 	let wrapped = shallow(<Header showAdd={showAdd}></Header>);
+		// act
+		history.push(route);
+		render(
+			<Router history={history}>
+				<Route>
+					<Header title={title} />
+				</Route>
+			</Router>
+		);
 
-		// 	// assert
-		// 	expect(wrapped.find('FaMinus')).toBeDefined();
-		// });
+		// assert
+		expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('Test');
+	});
+
+	it('should render the FaPlus icon if showAdd is false', () => {
+		// arrange
+		const history = createMemoryHistory();
+		const showAdd = false;
+		const route = '/';
+
+		// act
+		history.push(route);
+		const { container } = render(
+			<Router history={history}>
+				<Route>
+					<Header showAdd={showAdd} />
+				</Route>
+			</Router>
+		);
+
+		// assert
+		expect(screen.getByRole('button', { name: 'show-add-task' })).toBeInTheDocument();
+		expect(screen.queryByRole('button', { name: 'hide-add-task' })).not.toBeInTheDocument();
+		expect(container).toMatchSnapshot();
+	});
+
+	it('should render the FaMinus icon if showAdd is true', () => {
+		// arrange
+		const history = createMemoryHistory();
+		const showAdd = true;
+		const route = '/';
+
+		// act
+		history.push(route);
+		const { container } = render(
+			<Router history={history}>
+				<Route path='/'>
+					<Header showAdd={showAdd} />
+				</Route>
+			</Router>
+		);
+
+		// assert
+		expect(screen.getByRole('button', { name: 'hide-add-task' })).toBeInTheDocument();
+		expect(screen.queryByRole('button', { name: 'show-add-task' })).not.toBeInTheDocument();
+		expect(container).toMatchSnapshot();
 	});
 });
