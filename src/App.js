@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // project
-import { About, AddTask, Footer, Header, Tasks } from './components';
+import { About, AddTask, Footer, Header, TaskList } from './components';
 
 function App() {
 	const [showAddTask, setShowAddTask] = useState(false);
@@ -114,7 +114,7 @@ function App() {
 						<>
 							{showAddTask && <AddTask onAdd={addTask} />}
 							{tasks.length > 0 ? (
-								<Tasks
+								<TaskList
 									tasks={tasks}
 									onDelete={deleteTask}
 									onToggle={toggleReminder}
