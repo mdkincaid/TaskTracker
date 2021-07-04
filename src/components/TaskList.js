@@ -4,32 +4,29 @@ import { useState } from 'react';
 
 import Task from './Task';
 
-const Tasks = ({ tasks, onDelete, onToggle, onEdit }) => {
+const TaskList = ({ tasks, onDelete, onToggle, onEdit }) => {
 	const [editing, setEditing] = useState('');
 
-	const setEditStatus = (id) => {
-		if (editing === id) {
-			setEditing('');
-		} else {
+	const onEditSelect = (id) => {
 			setEditing(id);
-		}
 	};
 
 	return (
 		<>
 			{tasks.map((task) => (
 				<Task
+					aria-label={`task ${task.id}`}
 					key={task.id}
 					task={task}
 					onDelete={onDelete}
 					onToggle={onToggle}
 					onEdit={onEdit}
 					editing={editing}
-					setEditing={setEditStatus}
+					onEditSelect={onEditSelect}
 				/>
 			))}
 		</>
 	);
 };
 
-export default Tasks;
+export default TaskList;
