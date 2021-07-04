@@ -35,7 +35,7 @@ const Task = ({ task, onDelete, onToggle, onEdit, editing, onEditSelect }) => {
 					>
 						<FaTimes />
 					</button>
-					<p>{moment(task.date).format('dddd MMM Do [at] h:mma')}</p>
+					<p>{moment.utc(task.date).format('dddd MMM Do [at] h:mma') + ' UTC'}</p>
 				</div>
 			)}
 		</div>

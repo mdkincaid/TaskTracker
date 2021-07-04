@@ -47,7 +47,7 @@ exports[`Task should render correctly 1`] = `
         </svg>
       </button>
       <p>
-        Tuesday Jun 1st at 12:30pm
+        Tuesday Jun 1st at 4:30pm UTC
       </p>
     </div>
   </div>
