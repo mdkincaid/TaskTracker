@@ -3,8 +3,10 @@ import React from 'react';
 import { Router, Route } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import { createMemoryHistory } from 'history';
 import userEvent from '@testing-library/user-event';
+
+// third-party
+import { createMemoryHistory } from 'history';
 
 // project
 import TaskList from './TaskList';
