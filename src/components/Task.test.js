@@ -11,7 +11,7 @@ describe('Task', () => {
 		// arrange
 		const task = {
 			text: 'Test Task',
-			date: '2021-06-01T20:30:00.000Z',
+			date: '2021-06-01T16:30:00.000Z',
 			reminder: false,
 			id: 1,
 		};
@@ -27,7 +27,7 @@ describe('Task', () => {
 		// arrange
 		const task = {
 			text: 'Test Task',
-			date: '2021-06-01T20:30:00.000Z',
+			date: '2021-06-01T16:30:00.000Z',
 			reminder: false,
 			id: 1,
 		};
