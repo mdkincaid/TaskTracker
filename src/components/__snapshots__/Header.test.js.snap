@@ -6,7 +6,7 @@ exports[`Header should render 1`] = `
     class="header"
   >
     <h1>
-      Task Tracker
+      Test Title
     </h1>
     <button
       aria-label="show add task"
@@ -37,7 +37,7 @@ exports[`Header should render the FaMinus icon if showAdd is true 1`] = `
     class="header"
   >
     <h1>
-      Task Tracker
+      Test
     </h1>
     <button
       aria-label="hide add task"
@@ -68,7 +68,7 @@ exports[`Header should render the FaPlus icon if showAdd is false 1`] = `
     class="header"
   >
     <h1>
-      Task Tracker
+      Test
     </h1>
     <button
       aria-label="show add task"
