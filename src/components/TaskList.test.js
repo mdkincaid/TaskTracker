@@ -14,6 +14,8 @@ import TaskList from './TaskList'
 describe('TaskList', () => {
     it('should render', () => {
         // arrange
+        const history = createMemoryHistory()
+        const route = '/'
         const tasks = [
             {
                 text: 'Fake Task #1',
@@ -28,15 +30,21 @@ describe('TaskList', () => {
                 id: 2,
             },
         ]
-        const history = createMemoryHistory()
-        const route = '/'
+        const onDelete = () => {}
+        const onToggle = () => {}
+        const onEdit = () => {}
 
         // act
         history.push(route)
         const { container } = render(
             <Router history={history}>
                 <Route>
-                    <TaskList tasks={tasks} />
+                    <TaskList
+                        tasks={tasks}
+                        onDelete={onDelete}
+                        onToggle={onToggle}
+                        onEdit={onEdit}
+                    />
                 </Route>
             </Router>
         )
@@ -47,6 +55,8 @@ describe('TaskList', () => {
 
     it('should render 2 tasks when 2 tasks are supplied', () => {
         // arrange
+        const history = createMemoryHistory()
+        const route = '/'
         const tasks = [
             {
                 text: 'Fake Task #1',
@@ -61,15 +71,21 @@ describe('TaskList', () => {
                 id: 2,
             },
         ]
-        const history = createMemoryHistory()
-        const route = '/'
+        const onDelete = () => {}
+        const onToggle = () => {}
+        const onEdit = () => {}
 
         // act
         history.push(route)
         render(
             <Router history={history}>
                 <Route>
-                    <TaskList tasks={tasks} />
+                    <TaskList
+                        tasks={tasks}
+                        onDelete={onDelete}
+                        onToggle={onToggle}
+                        onEdit={onEdit}
+                    />
                 </Route>
             </Router>
         )
@@ -80,6 +96,8 @@ describe('TaskList', () => {
 
     it('should render the Edit Task form when the user clicks on the edit task button for a task', () => {
         // arrange
+        const history = createMemoryHistory()
+        const route = '/'
         const tasks = [
             {
                 text: 'Fake Task #1',
@@ -94,15 +112,21 @@ describe('TaskList', () => {
                 id: 2,
             },
         ]
-        const history = createMemoryHistory()
-        const route = '/'
+        const onDelete = () => {}
+        const onToggle = () => {}
+        const onEdit = () => {}
 
         // act
         history.push(route)
         render(
             <Router history={history}>
                 <Route path="/">
-                    <TaskList tasks={tasks} />
+                    <TaskList
+                        tasks={tasks}
+                        onDelete={onDelete}
+                        onToggle={onToggle}
+                        onEdit={onEdit}
+                    />
                 </Route>
             </Router>
         )

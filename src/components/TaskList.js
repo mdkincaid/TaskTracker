@@ -6,7 +6,7 @@ import { React, useState } from 'react'
 import Task from './Task'
 
 const TaskList = ({ tasks, onDelete, onToggle, onEdit }) => {
-    const [editing, setEditing] = useState('')
+    const [editing, setEditing] = useState(0)
 
     const onEditSelect = (id) => {
         setEditing(id)

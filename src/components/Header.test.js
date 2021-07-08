@@ -15,13 +15,16 @@ describe('Header', () => {
         // arrange
         const history = createMemoryHistory()
         const route = '/'
+        const title = 'Test Title'
+        const onAdd = () => {}
+        const showAdd = false
 
         // act
         history.push(route)
         const { container } = render(
             <Router history={history}>
                 <Route>
-                    <Header />
+                    <Header title={title} onAdd={onAdd} showAdd={showAdd} />
                 </Route>
             </Router>
         )
@@ -30,37 +33,20 @@ describe('Header', () => {
         expect(container).toMatchSnapshot()
     })
 
-    it('should render the default title of Task Tracker if no title is supplied', () => {
+    it('should render a title of Test when title is supplied', () => {
         // arrange
         const history = createMemoryHistory()
         const route = '/'
-
-        // act
-        history.push(route)
-        render(
-            <Router history={history}>
-                <Route>
-                    <Header />
-                </Route>
-            </Router>
-        )
-
-        // assert
-        expect(screen.getByRole('heading', 1).textContent).toBe('Task Tracker')
-    })
-
-    it('should render the title of Test when title is supplied', () => {
-        // arrange
-        const history = createMemoryHistory()
         const title = 'Test'
-        const route = '/'
+        const onAdd = () => {}
+        const showAdd = false
 
         // act
         history.push(route)
         render(
             <Router history={history}>
                 <Route>
-                    <Header title={title} />
+                    <Header title={title} onAdd={onAdd} showAdd={showAdd} />
                 </Route>
             </Router>
         )
@@ -72,15 +58,17 @@ describe('Header', () => {
     it('should render the FaPlus icon if showAdd is false', () => {
         // arrange
         const history = createMemoryHistory()
-        const showAdd = false
         const route = '/'
+        const title = 'Test'
+        const onAdd = () => {}
+        const showAdd = false
 
         // act
         history.push(route)
         const { container } = render(
             <Router history={history}>
                 <Route>
-                    <Header showAdd={showAdd} />
+                    <Header title={title} onAdd={onAdd} showAdd={showAdd} />
                 </Route>
             </Router>
         )
@@ -94,15 +82,17 @@ describe('Header', () => {
     it('should render the FaMinus icon if showAdd is true', () => {
         // arrange
         const history = createMemoryHistory()
-        const showAdd = true
         const route = '/'
+        const title = 'Test'
+        const onAdd = () => {}
+        const showAdd = true
 
         // act
         history.push(route)
         const { container } = render(
             <Router history={history}>
                 <Route path="/">
-                    <Header showAdd={showAdd} />
+                    <Header title={title} onAdd={onAdd} showAdd={showAdd} />
                 </Route>
             </Router>
         )

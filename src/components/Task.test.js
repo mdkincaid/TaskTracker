@@ -15,9 +15,23 @@ describe('Task', () => {
             reminder: false,
             id: 1,
         }
+        const onDelete = () => {}
+        const onToggle = () => {}
+        const onEdit = () => {}
+        const editing = 0
+        const onEditSelect = () => {}
 
         // act
-        const { container } = render(<Task task={task} />)
+        const { container } = render(
+            <Task
+                task={task}
+                onDelete={onDelete}
+                onToggle={onToggle}
+                onEdit={onEdit}
+                editing={editing}
+                onEditSelect={onEditSelect}
+            />
+        )
 
         // assert
         expect(container).toMatchSnapshot()
@@ -31,9 +45,23 @@ describe('Task', () => {
             reminder: false,
             id: 1,
         }
+        const onDelete = () => {}
+        const onToggle = () => {}
+        const onEdit = () => {}
+        const editing = 0
+        const onEditSelect = () => {}
 
         // act
-        render(<Task task={task} />)
+        render(
+            <Task
+                task={task}
+                onDelete={onDelete}
+                onToggle={onToggle}
+                onEdit={onEdit}
+                editing={editing}
+                onEditSelect={onEditSelect}
+            />
+        )
 
         // assert
         expect(screen.getByRole('heading', { level: 3 }).textContent).toBe(task.text)
