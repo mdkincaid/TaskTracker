@@ -10,6 +10,7 @@ exports[`Header should render 1`] = `
     </h1>
     <button
       aria-label="show add task"
+      type="button"
     >
       <svg
         cursor="pointer"
@@ -40,6 +41,7 @@ exports[`Header should render the FaMinus icon if showAdd is true 1`] = `
     </h1>
     <button
       aria-label="hide add task"
+      type="button"
     >
       <svg
         cursor="pointer"
@@ -70,6 +72,7 @@ exports[`Header should render the FaPlus icon if showAdd is false 1`] = `
     </h1>
     <button
       aria-label="show add task"
+      type="button"
     >
       <svg
         cursor="pointer"
