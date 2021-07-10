@@ -64,6 +64,6 @@ describe('Task', () => {
         )
 
         // assert
-        expect(screen.getByRole('heading', { level: 3 }).textContent).toBe(task.text)
+        expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent(task.text)
     })
 })

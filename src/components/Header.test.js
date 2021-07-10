@@ -52,7 +52,7 @@ describe('Header', () => {
         )
 
         // assert
-        expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('Test')
+        expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Test')
     })
 
     it('should render the FaPlus icon if showAdd is false', () => {
