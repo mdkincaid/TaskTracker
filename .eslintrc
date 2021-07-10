@@ -1,13 +1,34 @@
 {
-    "extends": [
-        "airbnb",
+	"extends": [
         "plugin:prettier/recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended"
-    ],
-    "plugins": ["prettier", "react", "jest-dom", "testing-library"],
-    "rules": {
+        "plugin:jsx-a11y/recommended",
+        "plugin:jest-dom/recommended",
+        "plugin:import/recommended",
+        "plugin:testing-library/recommended",
+        "react-app",
+        "react-app/jest"
+	],
+    "plugins": ["prettier", "react", "jest-dom", "testing-library", "jsx-a11y", "react-hooks", "import"],
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 2018,
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"env": {
+		"browser": true,
+		"node": true,
+		"jest": true
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"rules": {
         "prettier/prettier": ["error"],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/jsx-indent": [2, 4],
@@ -17,7 +38,7 @@
         "react/static-property-placement": [1, "property assignment"],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
-        "sort-imports": [
+		"sort-imports": [
             "error",
             {
                 "ignoreCase": false,
@@ -27,15 +48,5 @@
                 "allowSeparatedGroups": true
             }
         ]
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
-    "env": {
-        "browser": true,
-        "node": true,
-        "jest": true
-    }
+	}
 }
